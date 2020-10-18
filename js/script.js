@@ -49,3 +49,18 @@ function hapus(i) {
     data.splice(i, 1);
     showValue();
 }
+
+// Event pada saat klik navbar
+$('.page-scroll').on('click', function(e) {
+    // ambil isi href
+    var tujuan = $(this).attr('href');
+    // tangkap elemennya
+    var elemenTujuan = $(tujuan);
+    
+    // pindahkan scroll
+    $('body').animate({
+        scrollTop: elemenTujuan.offset().top - 50
+    });
+
+    e.preventDefault();
+});
